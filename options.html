@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>YouTube Focus Guard — Settings</title>
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div id="app">
+    <h1>YouTube Focus Guard</h1>
+    <p class="subtitle">Set your limits, define what counts as "educational," and decide how much taunting you want.</p>
+
+    <section>
+      <h2>Nagging thresholds</h2>
+      <p class="hint">You'll get a taunt each time you cross one of these (minutes of non-educational watching, per day).</p>
+      <div class="threshold-row">
+        <label>1st reminder (min)<input type="number" id="t1" min="1" max="240"></label>
+        <label>2nd reminder (min)<input type="number" id="t2" min="1" max="240"></label>
+        <label>3rd reminder (min)<input type="number" id="t3" min="1" max="240"></label>
+      </div>
+      <label class="checkbox-row">
+        <input type="checkbox" id="hardBlock">
+        Pause and block non-educational video after the 3rd reminder, for the rest of the day
+      </label>
+    </section>
+
+    <section>
+      <h2>Shorts</h2>
+      <label class="checkbox-row">
+        <input type="checkbox" id="shortsBlock">
+        Block Shorts pages entirely (redirects you away)
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="hideShortsUi">
+        Hide Shorts shelves and links elsewhere on YouTube
+      </label>
+    </section>
+
+    <section>
+      <h2>What counts as "educational"</h2>
+      <p class="hint">A video is treated as educational if its title or channel name contains any of these words or phrases (one per line, not case-sensitive).</p>
+      <textarea id="keywords" rows="8" spellcheck="false"></textarea>
+    </section>
+
+    <section>
+      <h2>"Take me to something educational" search</h2>
+      <p class="hint">Used by the redirect buttons — a YouTube search query.</p>
+      <input type="text" id="redirectQuery">
+    </section>
+
+    <div class="actions">
+      <button id="save">Save settings</button>
+      <span id="saved-msg" class="saved-msg"></span>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
